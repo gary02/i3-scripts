@@ -9,3 +9,4 @@ if len(to_be_swapped) == 2:
     for output in to_be_swapped:
         i3.workspace(output['current_workspace'])
         i3.command('move', 'workspace to output right')
+    i3.command('focus output eDP1')
