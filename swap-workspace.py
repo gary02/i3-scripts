@@ -1,6 +1,7 @@
 #!/usr/bin/python2.7
 # Swap workspaces on two monitors
 import i3
+import time
 
 # collect active outputs
 to_be_swapped = [output for output in i3.get_outputs() if output['active']]
@@ -9,4 +10,5 @@ if len(to_be_swapped) == 2:
     for output in to_be_swapped:
         i3.workspace(output['current_workspace'])
         i3.command('move', 'workspace to output right')
-    i3.command('focus output eDP1')
+    time.sleep(0.1)
+    i3.command('focus output HDMI1')
